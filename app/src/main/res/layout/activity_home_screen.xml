@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<androidx.drawerlayout.widget.DrawerLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/drawer"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="true"-->
+<!--    tools:openDrawer="start">-->
+
+
+<!--    &lt;!&ndash;  MainActivity Layout &ndash;&gt;-->
+
+<!--   <include layout="@layout/searcharea"/>-->
+
+<!--    <include layout="@layout/drawer_menu"/>-->
+<!--&lt;!&ndash;    <com.google.android.gms.maps.MapView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/mapView"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="match_parent" />&ndash;&gt;-->
+<!--</androidx.drawerlayout.widget.DrawerLayout>-->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#efefef">
+
+
+
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ADADAD"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:theme="@style/Theme.AppCompat">
+    <include layout="@layout/searcharea" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="81dp"
+            android:layout_height="77dp"
+            android:background="@color/themeColor"
+            app:layout_constraintBottom_toBottomOf="@+id/mapView"
+            app:layout_constraintEnd_toEndOf="@+id/mapView"
+            app:layout_constraintStart_toStartOf="@+id/mapView"
+            app:layout_constraintTop_toTopOf="@+id/mapView"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/mapSearchArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="@+id/mapView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/currentLocationbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="Pick Current Loaction"
+                android:textColor="#FFC300"
+                />
+
+            <Button
+                android:id="@+id/loacateonmapbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/currentLocationbtn"
+                android:text="Locate on Map"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mapSearchArea2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingLeft="120dp"
+            android:paddingRight="120dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mapView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            >
+
+            <Button
+                android:id="@+id/loacateonmapbtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Locate on Map"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/mapSearchArea3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingLeft="120dp"
+            android:paddingRight="120dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mapView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            >
+
+            <Button
+                android:id="@+id/confirm_Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Confirm Location"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--    <include layout="@layout/drawer_menu"/>-->
+</androidx.drawerlayout.widget.DrawerLayout>
+<include layout="@layout/cabslist"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
